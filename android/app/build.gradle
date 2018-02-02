@@ -43,4 +43,6 @@ dependencies {
         transitive = true
     }
     compile 'com.google.android.gms:play-services-maps:11.2.0'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'com.uber.sdk:rides-android:0.5.3'
 }

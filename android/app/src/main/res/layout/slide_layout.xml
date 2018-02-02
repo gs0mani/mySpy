@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/slide_image"
+        android:background="#01fefdfd"
+        android:src="@drawable/fire2"
+        android:layout_marginTop="73dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/slide_description"
+        android:layout_above="@+id/slide_heading"
+        android:layout_alignEnd="@+id/slide_description" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By altering  definition, we can obtain different types of graphs. For instance, by replacing the set E with a set of ordered "
+        android:id="@+id/slide_description"
+        android:textStyle="normal"
+        android:textSize="15sp"
+        android:textColor="#f24545"
+        style="@style/Animation.AppCompat.Dialog"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="105dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HEADING"
+        android:id="@+id/slide_heading"
+        android:textSize="25sp"
+        android:textIsSelectable="true"
+        android:textColor="#0886c0"
+        android:textStyle="bold"
+        android:padding="@dimen/abc_action_bar_content_inset_material"
+        android:layout_above="@+id/slide_description"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

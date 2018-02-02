@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+def GOOGLE_MAPS_API_KEY = ""+GoogleMapsApiKey+"" ?: 'Get API Key from https://developers.google.com/maps/'
+def SITUM_SDK_API_KEY = ""+SitumSdkApiKey+"" ?: 'Configure Situm SDK and Get your API KEY from https://dashboard.situm.es/accounts/profile'
+def SITUM_SDK_API_USER = ""+SitumSdkApiUser+"" ?: 'Enter Situm login Email address'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        applicationId "com.example.user.myspy"
+        minSdkVersion 18
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        /*Term ‘buildConfigField’ will configure the variable in order to access to the project.
+
+        Term ‘manifestPlaceholders’ is used to make available variables in the manifest file*/
+        each { type ->
+//            type.buildConfigField STRING, 'GoogleMapsApiKey', GOOGLE_MAPS_API_KEY
+        }
+
+        manifestPlaceholders = [
+                GOOGLE_MAPS_API_KEY : GOOGLE_MAPS_API_KEY,
+                SITUM_SDK_API_KEY : SITUM_SDK_API_KEY,
+                SITUM_SDK_API_USER : SITUM_SDK_API_KEY
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:27+'
+    compile ('es.situm:situm-sdk:2.14.3@aar') {
+        transitive = true
+    }
+    compile 'com.google.android.gms:play-services-maps:11.2.0'
+}

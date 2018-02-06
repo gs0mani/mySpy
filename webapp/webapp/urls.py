@@ -15,17 +15,27 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
+from django.shortcuts import render
 from rest_framework.urlpatterns import format_suffix_patterns
 
 import sys
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+import settings
 #sys.path.insert(0, "../")
 
 #from ..myspyapi.views import LearnTrack
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^myspyapi/',include('myspyapi.urls')),
+    url(r'^login/$', auth_views.login),
+    url(r'^logout/$', auth_views.logout),
+    url(r'^', include('myspyapi.urls')),
+    #website home here 
     #url(r'^track/$', views.LearnTrack.as_view()),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
 
 #urlpatterns = format_suffix_patterns(urlpatterns)

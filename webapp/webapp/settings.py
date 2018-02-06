@@ -25,7 +25,7 @@ SECRET_KEY = '(@y0wa@d*9o(yt6s!6^n2!*eub*53hs3jmja%i8by9wvs2ahi3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['172.17.%s.%s' %(i,j) for i in range(256) for j in range (256)]
 
 
 # Application definition
@@ -45,7 +45,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -82,6 +82,52 @@ DATABASES = {
     }
 }
 
+# if DEBUG:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'sql_server.pyodbc',
+#             'NAME': 'mysqldatabase43349',
+#             'USER': 'mysqldbuser',
+#             'PASSWORD': 'myspy@mat14',
+#             'HOST': 'myspy-mysqldbserver',
+#             'PORT': '1433',
+#             'OPTIONS': {
+#                 'driver': 'FreeTDS',
+#                 'host_is_server': True,
+#             },
+#         }
+#     }
+# else :
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'sql_server.pyodbc',
+#             'NAME': os.getenv("DATABASE_NAME"),
+#             'USER': os.getenv("DATABASE_USER"),
+#             'PASSWORD': os.getenv("DATABASE_PASSWORD"),
+#             'HOST': os.getenv("DATABASE_HOST"),
+#             'PORT': os.getenv("DATABASE_PORT"),
+#             'OPTIONS' : {
+#                     'driver': 'ODBC Driver 13 for SQL Server',
+#                     'MARS_Connection': 'True',
+#                 }
+#         }
+# }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'sql_server.pyodbc',
+#         'NAME': 'mysqldatabase43349',
+#         'USER': 'mysqldbuser@myspy-mysqldbserver',
+#         'PASSWORD': 'myspy@mat14',
+#         'HOST': 'myspy-mysqldbserver.mysql.database.azure.com',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#             'driver': 'MySQL ODBC 5.3 UNICODE Driver',
+#             'host_is_server': True,
+#         },
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -119,4 +165,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+#     ),
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         #'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+
+#         'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework.authentication.BasicAuthentication',
+#     ),
+# }
+
+STATIC_URL = '/home/gaurav/cfd18/webapp/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

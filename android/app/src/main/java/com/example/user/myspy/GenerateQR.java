@@ -3,6 +3,7 @@ package com.example.user.myspy;
 /**
  * Created by user on 02-02-2018.
  */
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -20,7 +21,7 @@ import com.google.zxing.common.BitMatrix;
 public class GenerateQR extends AppCompatActivity {
 
     ImageView imageView;
-    Button button;
+    Button button, scan_btn;
     EditText editText;
     String EditTextValue ;
     Thread thread ;
@@ -34,6 +35,7 @@ public class GenerateQR extends AppCompatActivity {
         imageView = (ImageView)findViewById(R.id.qr_image);
         editText = (EditText)findViewById(R.id.qr_et);
         button = (Button)findViewById(R.id.qr_btn);
+        scan_btn = (Button)findViewById(R.id.qr_scan_btn);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +54,14 @@ public class GenerateQR extends AppCompatActivity {
 
             }
         });
+
+        /*scan_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GenerateQR.this, ScanQR.class));
+                finish();
+            }
+        });*/
     }
 
 
@@ -87,5 +97,11 @@ public class GenerateQR extends AppCompatActivity {
 
         bitmap.setPixels(pixels, 0, 500, 0, 0, bitMatrixWidth, bitMatrixHeight);
         return bitmap;
+    }
+
+    public void onBackPressed(){
+        finish();
+        Intent intent = new Intent(GenerateQR.this, RemoteActivity.class);
+        startActivity(intent);
     }
 }

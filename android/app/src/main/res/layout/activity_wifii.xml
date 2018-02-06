@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WifiConnections" >
+
+    <TextView
+        android:id="@+id/mainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Hello_world"
+        android:maxLines = "10"
+        android:scrollbars = "vertical"
+        android:scrollIndicators="top|bottom"
+        android:nestedScrollingEnabled="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connected wifi:"
+        android:id="@+id/connText"
+        android:layout_above="@+id/mainText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="72dp"
+        android:nestedScrollingEnabled="true"
+        android:maxLines = "20"
+        android:scrollbars = "vertical"
+        android:scrollIndicators="top|bottom" />
+
+</RelativeLayout>

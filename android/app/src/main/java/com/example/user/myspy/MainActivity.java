@@ -38,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        findViewById(R.id.draw).setOnClickListener(new View.OnClickListener() {
+        /*findViewById(R.id.draw).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, DrawBuildingActivity.class));
                 finish();
             }
-        });
+        });*/
 
         mSlideViewPage = (ViewPager) findViewById(R.id.viewPager);
         mDotLayout = (LinearLayout) findViewById(R.id.dotsLayout);
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 mNxtBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(MainActivity.this, GenerateQR.class));
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));  // change this back to LoginActivity
                         finish();
                     }
                 });

@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.user.myspy">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,38 +19,104 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".DrawBuildingActivity"
-            android:label="Draw building"
+        <activity
+            android:name=".DrawBuildingActivity"
+            android:label="TRACK"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GenerateQR"
+            android:label="GENERATE QR"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ScanQR"
+            android:label="SCAN QR"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegisterActivity"
+            android:label="REGISTER"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="LOGIN"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="PROFILE"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="HOME"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RideActivity"
+            android:label="RIDE"
             android:screenOrientation="portrait"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".HomeActivity">
+
+         <meta-data
+             android:name="android.support.PARENT_ACTIVITY"
+             android:value=".HomeActivity" />
         </activity>
 
-        <activity android:name=".GenerateQR"
-            android:label="Draw building"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".MainActivity">
+        <activity
+            android:name=".RemoteActivity"
+            android:label="REMOTE MONITOR"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".LearnActivity"
+            android:label="LEARN"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".RescueActivity"
+            android:label="RESCUE"
+            android:screenOrientation="portrait">
         </activity>
 
-        <!-- Google play services version-->
+        <!--
+        <activity android:name=".ProfileActivity"
+            android:label="Draw building"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".HomeActivity">
+        </activity>
+        -->
+
+
+        <!-- Google play services version -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
-        <!-- Situm SDK credentials -->
+        <!--
+         Situm SDK credentials
         <meta-data
             android:name="es.situm.sdk.API_USER"
             android:value="{$SITUM_SDK_API_USER}" />
         <meta-data
-
             android:name="es.situm.sdk.API_KEY"
             android:value="{$SITUM_SDK_API_KEY}" />
+
+        &lt;!&ndash; GMaps api key &ndash;&gt;
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="{$GOOGLE_MAPS_API_KEY}" />
+        -->
+
+        <meta-data
+            android:name="es.situm.sdk.API_USER"
+            android:value="@string/api_user" />
+        <meta-data
+            android:name="es.situm.sdk.API_KEY"
+            android:value="@string/api_key" />
 
         <!-- GMaps api key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="{$GOOGLE_MAPS_API_KEY}" />
+            android:value="@string/google_maps_key" />
 
+        <activity android:name=".Wifii"></activity>
     </application>
 
 </manifest>

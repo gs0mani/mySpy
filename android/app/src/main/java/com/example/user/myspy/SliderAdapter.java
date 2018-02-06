@@ -29,13 +29,13 @@ public class SliderAdapter extends PagerAdapter {
 
     public String[] slide_headings={
             "RESCUE",
-            "RIDE",
-            "MONITOR" };
+            "RIDE A CAB",
+            "REMOTE MONITOR" };
 
     public String[] slide_descriptions={
-            "Lorum ipsum sitamet, corseducer elit,sed do elased tempor incident al lahore et labour et dalore nanga",
-            "Lorum ipsum sitamet, corseducer elit,sed do elased tempor incident al lahore et labour et dalore nanga",
-            "Lorum ipsum sitamet, corseducer elit,sed do elased tempor incident al lahore et labour et dalore nanga" };
+            "Fire Emergency? Worry not!  I'll locate you precisely and show you the shortest way out!! ",
+            "I'll pick you from your exact location without any hassel! \n -Yours own Chauffer",
+            "Allow me to keep a track of your productivity on a day-to-day basis, soyou won't slack off " };
 
 
     @Override

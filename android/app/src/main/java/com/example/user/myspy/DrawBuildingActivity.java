@@ -3,6 +3,7 @@ package com.example.user.myspy;
 /**
  * Created by user on 02-02-2018.
  */
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -52,6 +53,11 @@ public class DrawBuildingActivity
         super.onDestroy();
     }
 
+    public void onBackPressed(){
+        finish();
+        Intent intent = new Intent(DrawBuildingActivity.this, RemoteActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {

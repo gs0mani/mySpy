@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+        <ImageButton
+            android:id="@+id/ib_rescue"
+            android:src="@drawable/fire11"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:background="#ed2424"
+            android:paddingBottom="5dp"/>
+
+
+        <ImageButton
+            android:id="@+id/ib_ride"
+            android:layout_height="256dp"
+            android:layout_width="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/car11"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+
+            android:background="#3080e1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp">
+
+        <ImageButton
+            android:id="@+id/ib_profile"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/user11"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:background="#7dfad9"
+            android:paddingBottom="5dp"/>
+
+        <ImageButton
+            android:id="@+id/ib_learn"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:src="@drawable/learn11"
+            android:scaleType="fitCenter"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/ib_profile"
+            android:layout_below="@+id/ib_profile"
+            android:background="#11b434"
+            android:paddingBottom="5dp"
+            android:paddingTop="10dp"/>
+
+
+        <ImageButton
+            android:id="@+id/ib_remote"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/monitor11"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="#fde614"
+            android:paddingTop="10dp"/>
+    </LinearLayout>
+
+<!--
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rescue"
+        android:id="@+id/rescue" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Learn"
+        android:id="@+id/learn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remote"
+        android:id="@+id/remote" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ride"
+        android:id="@+id/ride" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:id="@+id/profile" />
+
+-->
+
+</LinearLayout>

@@ -1,6 +1,64 @@
 <resources>
     <string name="app_name">mySpy</string>
+
     <string name="google_maps_key">AIzaSyAw3J77tWPQaIbRTYMvnPmwGKG5b0LHCJQ</string>
     <string name="api_user">sourabh.8.june.1996@gmail.com</string>
     <string name="api_key">b283ee32fe55821edfe7b581d5a6a8b429248eb4ed1ab533a5a21fa9071e8ad7</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="name">Fullname</string>
+
+    <string name="building_prompt">Choose a Building</string>
+    <string name="floor_prompt">Choose a Floor</string>
+    <string name="room_prompt">Choose a Room</string>
+    <string name="no_prompt">Choose a Room number</string>
+
+
+    <string-array name="buildings_arrays">
+        <item>Department of Computer Science and Engineering</item>
+        <item>Department of Mathematical Sciences</item>
+        <item>New Lecture Theater Complex</item>
+        <item>Department of Mechanical Engineering</item>
+        <item>Department of Chemistry</item>
+        <item>Department of Physics</item>
+        <item>Main Library</item>
+
+    </string-array>
+    <string-array name="floor_arrays">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+
+
+    </string-array>
+    <string-array name="room_arrays">
+        <item>Lab</item>
+        <item>Office</item>
+        <item>Staff</item>
+        <item>Lecture Theater</item>
+        <item>Stair-well</item>
+
+
+    </string-array>
+    <string-array name="no_arrays">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+    </string-array>
+
+
 </resources>

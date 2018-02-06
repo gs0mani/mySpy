@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 
+
 def GOOGLE_MAPS_API_KEY = ""+GoogleMapsApiKey+"" ?: 'Get API Key from https://developers.google.com/maps/'
 def SITUM_SDK_API_KEY = ""+SitumSdkApiKey+"" ?: 'Configure Situm SDK and Get your API KEY from https://dashboard.situm.es/accounts/profile'
 def SITUM_SDK_API_USER = ""+SitumSdkApiUser+"" ?: 'Enter Situm login Email address'
@@ -14,6 +15,9 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+
+        multiDexEnabled true
+
         /*Term ‘buildConfigField’ will configure the variable in order to access to the project.
 
         Term ‘manifestPlaceholders’ is used to make available variables in the manifest file*/
@@ -42,7 +46,18 @@ dependencies {
     compile ('es.situm:situm-sdk:2.14.3@aar') {
         transitive = true
     }
+//    compile "com.google.firebase:firebase-auth:10.0.1"
     compile 'com.google.android.gms:play-services-maps:11.2.0'
     compile 'com.google.zxing:core:3.2.1'
+    compile 'com.journeyapps:zxing-android-embedded:3.4.0'
     compile 'com.uber.sdk:rides-android:0.5.3'
+    compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:25.0.1'
+
+
+
 }
+
+//Apparently you have to apply your GSM plugin at the bottom of your app/build.gradle file. Else, version gms version 11.2.0 will cause conflict in your project
+apply plugin: 'com.google.gms.google-services'
